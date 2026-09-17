@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>EikthyrDropDeerMeat</AssemblyName>
+    <Description>Ajoute un drop de 5 à 10 viandes de cerf sur Eikthyr, en conservant son loot vanilla.</Description>
+    <Version>2.0.1</Version>
+    <LangVersion>latest</LangVersion>
+    <RestoreAdditionalProjectSources>
+      https://api.nuget.org/v3/index.json;
+      https://nuget.bepinex.dev/v3/index.json
+    </RestoreAdditionalProjectSources>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- BepInEx et Harmony via NuGet -->
+    <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.Core" Version="5.*" />
+    <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
+    <PackageReference Include="HarmonyX" Version="2.10.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--
+      IMPORTANT : Ces DLL ne sont PAS distribuables et doivent être référencées directement
+      depuis ton installation locale de Valheim. Remplace le chemin ci-dessous par le tien.
+      Chemin Steam typique (Windows) :
+      C:\Program Files (x86)\Steam\steamapps\common\Valheim\valheim_Data\Managed
+
+      Fichiers nécessaires : assembly_valheim.dll, assembly_valheim_publicized.dll (si tu utilises
+      BepInEx.AssemblyPublicizer), UnityEngine.CoreModule.dll
+    -->
+   <Reference Include="assembly_valheim">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Valheim\valheim_Data\Managed\assembly_valheim.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project> 

@@ -1,0 +1,9 @@
+{
+  "name": "EikthyrDropDeerMeat",
+  "version_number": "1.0.0",
+  "website_url": "https://www.nexusmods.com/valheim/mods/3283",
+  "description": "Eikthyr drop desormais entre 5 et 10 viandes de cerf en plus de son loot vanilla habituel.",
+  "dependencies": [
+    "denikson-BepInExPack_Valheim-5.4.2100"
+  ]
+}
